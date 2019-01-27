@@ -42628,7 +42628,7 @@ module.exports = Vue;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(142);
-module.exports = __webpack_require__(189);
+module.exports = __webpack_require__(192);
 
 
 /***/ }),
@@ -42721,7 +42721,7 @@ __WEBPACK_IMPORTED_MODULE_3_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vue_
 // either be an actual component constructor created via
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
-var routes = [{ path: '/dashboard', component: __webpack_require__(171) }, { path: '/profile', component: __webpack_require__(174) }, { path: '/users', component: __webpack_require__(177) }, { path: '/subjects', component: __webpack_require__(180) }, { path: '/students', component: __webpack_require__(183) }];
+var routes = [{ path: '/dashboard', component: __webpack_require__(171) }, { path: '/profile', component: __webpack_require__(174) }, { path: '/users', component: __webpack_require__(177) }, { path: '/subjects', component: __webpack_require__(180) }, { path: '/students', component: __webpack_require__(183) }, { path: '/departments', component: __webpack_require__(186) }];
 
 //3. Routes Registration
 //Create the router instance and pass the `routes` option
@@ -42740,7 +42740,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_4_vue_router__["a" /* default */]({
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-__WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('example-component', __webpack_require__(186));
+__WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('example-component', __webpack_require__(189));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -73696,6 +73696,668 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
+Component.options.__file = "resources/js/components/Departments.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-07e889c6", Component.options)
+  } else {
+    hotAPI.reload("data-v-07e889c6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 187 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vform__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vform___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vform__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+
+            editmode: true, // for edit conditional
+            departments: {}, //user object
+
+            // Create a new form instance
+            form: new __WEBPACK_IMPORTED_MODULE_0_vform__["Form"]({
+                id: '',
+                department_code: '',
+                department_name: ''
+            })
+        };
+    },
+    // end of data
+    methods: {
+        newModal: function newModal() {
+            this.editmode = false;
+            this.form.reset(); //reset filled of form
+            $('#addNewDepartment').modal('show');
+        },
+        editModal: function editModal(department) {
+            this.editmode = true;
+            this.form.reset(); //reset filled of form
+            $('#addNewDepartment').modal('show');
+            this.form.fill(department);
+        },
+        createDepartment: function createDepartment() {
+            var _this = this;
+
+            this.$Progress.start();
+            this.form.post('api/department').then(function () {
+                Fire.$emit('reload');
+
+                $('#addNewDepartment').modal('hide');
+
+                toast({
+                    type: 'success',
+                    title: 'User Created'
+                });
+
+                _this.$Progress.finish();
+            }).catch(function () {
+                _this.$Progress.fail();
+            });
+        },
+        loadDepartments: function loadDepartments() {
+            var _this2 = this;
+
+            axios.get("api/department").then(function (_ref) {
+                var data = _ref.data;
+                return _this2.departments = data.data;
+            });
+        },
+        updateDepartment: function updateDepartment() {
+            var _this3 = this;
+
+            this.$Progress.start();
+            this.form.put('api/department/' + this.form.id).then(function () {
+                Fire.$emit('reload');
+                //success
+                $('#addNewDepartment').modal('hide');
+                swal('Updated!', 'User Info has been updated.', 'success');
+                _this3.$Progress.finish();
+            }).catch(function () {
+                _this3.$Progress.fail();
+            });
+        },
+        deleteDelete: function deleteDelete(id) {
+            var _this4 = this;
+
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(function (result) {
+
+                // Send AJAX request to the server
+                if (result.value) {
+
+                    _this4.form.delete('api/department/' + id).then(function () {
+                        swal('Deleted!', 'Your file has been deleted.', 'success');
+                        Fire.$emit('reload');
+                    }).catch(function () {
+                        swal('Failed!', 'There was something wrong.', 'warning');
+                    });
+                }
+            });
+        }
+    },
+    created: function created() {
+        var _this5 = this;
+
+        this.loadDepartments();
+
+        //fire new vue instance to listen for 'searching'
+        //send an http request to the server
+        Fire.$on('searching', function () {
+            var query = _this5.$parent.search; // query parent(app.js) for 'search'
+            axios.get('api/findDepartment?q=' + query).then(function (data) {
+                _this5.departments = data.data;
+            }).catch();
+            //console.log('searching...');
+        });
+
+        Fire.$on('reload', function () {
+            _this5.loadDepartments();
+        });
+
+        // setInterval(() => {
+        //     this.loadUsers();
+        // }, 3000);
+    }
+});
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("h3", { staticClass: "card-title" }, [
+              _vm._v("Departments Table")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-tools" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  on: {
+                    click: function($event) {
+                      _vm.newModal()
+                    }
+                  }
+                },
+                [
+                  _c("i", { staticClass: "fas fa-user-plus fa-fw" }),
+                  _vm._v(" Add Department\n                ")
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body table-responsive p-0" }, [
+            _c("table", { staticClass: "table table-hover" }, [
+              _c(
+                "tbody",
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _vm._l(_vm.departments, function(department) {
+                    return _c("tr", { key: department.id }, [
+                      _c("td", [_vm._v(_vm._s(department.id))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          { staticClass: "nav-link", attrs: { href: "#" } },
+                          [
+                            _vm._v(
+                              _vm._s(
+                                _vm._f("uppercase")(department.department_code)
+                              )
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(
+                            _vm._f("uppercase")(department.department_name)
+                          )
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _vm._v(
+                          _vm._s(
+                            _vm._f("uppercase")(
+                              _vm._f("datetime")(department.created_at)
+                            )
+                          )
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "#" },
+                            on: {
+                              click: function($event) {
+                                _vm.editModal(department)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-edit text-green" })]
+                        ),
+                        _vm._v("  \n\n                    "),
+                        _vm._v(" "),
+                        _c(
+                          "a",
+                          {
+                            attrs: { href: "#" },
+                            on: {
+                              click: function($event) {
+                                _vm.deleteUser(department.id)
+                              }
+                            }
+                          },
+                          [_c("i", { staticClass: "fa fa-trash text-red" })]
+                        )
+                      ])
+                    ])
+                  })
+                ],
+                2
+              )
+            ])
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "addNewDepartment",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "addNewDepartmentLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "modal-dialog modal-dialog-centered",
+            attrs: { role: "document" }
+          },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: !_vm.editmode,
+                        expression: "!editmode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addNewDepartmentLabel" }
+                  },
+                  [_vm._v("Add Department")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h5",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: _vm.editmode,
+                        expression: "editmode"
+                      }
+                    ],
+                    staticClass: "modal-title",
+                    attrs: { id: "addNewDepartmentLabel" }
+                  },
+                  [_vm._v("Edit Department Info")]
+                ),
+                _vm._v(" "),
+                _vm._m(1)
+              ]),
+              _vm._v(" "),
+              _c(
+                "form",
+                {
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      _vm.editmode
+                        ? _vm.updateDepartment()
+                        : _vm.createDepartment()
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "modal-body" }, [
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.department_code,
+                              expression: "form.department_code"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("deparment_code")
+                          },
+                          attrs: {
+                            id: "department_code",
+                            placeholder: "Department Code",
+                            type: "text",
+                            name: "department_code"
+                          },
+                          domProps: { value: _vm.form.department_code },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "department_code",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "department" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.form.department_name,
+                              expression: "form.department_name"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid": _vm.form.errors.has("department_name")
+                          },
+                          attrs: {
+                            id: "department_name",
+                            placeholder: "Department Name",
+                            type: "text",
+                            name: "department_name"
+                          },
+                          domProps: { value: _vm.form.department_name },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.form,
+                                "department_name",
+                                $event.target.value
+                              )
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "department_name" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "modal-footer" }, [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        attrs: { type: "submit", "data-dismiss": "modal" }
+                      },
+                      [_vm._v("Close")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: !_vm.editmode,
+                            expression: "!editmode"
+                          }
+                        ],
+                        staticClass: "btn btn-success",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("Create")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: _vm.editmode,
+                            expression: "editmode"
+                          }
+                        ],
+                        staticClass: "btn btn-success",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v("Update")]
+                    )
+                  ])
+                ]
+              )
+            ])
+          ]
+        )
+      ]
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("ID")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Code")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Name")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Created_at")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Action")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "close",
+        attrs: {
+          type: "button",
+          "data-dismiss": "modal",
+          "aria-label": "Close"
+        }
+      },
+      [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-07e889c6", module.exports)
+  }
+}
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(190)
+/* template */
+var __vue_template__ = __webpack_require__(191)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
 Component.options.__file = "resources/js/components/ExampleComponent.vue"
 
 /* hot reload */
@@ -73718,7 +74380,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 187 */
+/* 190 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73747,7 +74409,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 188 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -73790,7 +74452,7 @@ if (false) {
 }
 
 /***/ }),
-/* 189 */
+/* 192 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

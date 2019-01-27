@@ -7,7 +7,118 @@
               <p>Dashboard</p>
             </router-link>
           </li>
-          <!-- Management Treeview -->
+          
+           <!-- Student -------------------->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user"></i>
+              <p> Students
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ml-3">
+                <router-link to="/students" class="nav-link">
+                  <p>All Subjects</p>
+                </router-link>
+              </li>
+            </ul>
+          </li>
+          <!-- Subject -------------------->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-bookmark"></i>
+              <p> Subject
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ml-3">
+                <router-link to="/subjects" class="nav-link">
+                  <p>All Subjects</p>
+                </router-link>
+              </li>
+            </ul>
+          </li>
+
+           <!-- Departments -------------------->
+          <li class="nav-item has-treeview">
+            <router-link to="#" class="nav-link">
+              <i class="fas fa-dollar-sign"></i>
+              <p> Departments
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </router-link>
+            <ul class="nav nav-treeview">
+              <li class="nav-item ml-3">
+                <router-link to="/departments" class="nav-link">
+                  <p>All Departments</p>
+                </router-link>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Library -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-book-reader"></i>
+              <p> Library
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <p>All Library Assets</p>
+                </a>
+                <a href="#" class="nav-link">
+                  <p>Add Library Asset</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Fees -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-dollar-sign"></i>
+              <p> Fees
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <p>Fees Collection</p>
+                </a>
+                <a href="#" class="nav-link">
+                  <p>Add Fee Payment</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- QA -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="fas fa-ribbon"></i>
+              <p> Quality Assurance
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <p>Students Attendance</p>
+                </a>
+                <a href="#" class="nav-link">
+                  <p>Add Attendance</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+         <!-- Management Treeview -->
           <li class="nav-item has-treeview menu-open">
             <router-link to="{!! ('#') !!}" class="nav-link">
             <i class="fa fa-th nav-icon text-orange"></i>
@@ -27,67 +138,7 @@
               </li>
              
             </ul>
-          </li>
-          <!-- Student ---------------------------->
-          <li class="nav-item has-treeview menu-open">
-            <router-link to="{!! ('#') !!}" class="nav-link">
-            <i class="fa fa-th nav-icon text-orange"></i>
-              <p>
-                Students
-                <i class="right fa fa-angle-left text-orange"></i>
-              </p>
-            </router-link>
-            <ul class="nav nav-treeview">
-              <li class="nav-item ml-3">
-                <router-link to="{!! ('/students') !!}" class="nav-link">
-                  <p>
-                  <i class="fas fa-users"></i>
-                    All Students
-                  </p>
-                </router-link>
-              </li>
-             
-            </ul>
-          </li>
-
-          <!-- Subject ---------------------------->
-          <li class="nav-item has-treeview menu-open">
-            <router-link to="{!! ('#') !!}" class="nav-link">
-            <i class="fa fa-th nav-icon text-orange"></i>
-              <p>
-                Subject
-                <i class="right fa fa-angle-left text-orange"></i>
-              </p>
-            </router-link>
-            <ul class="nav nav-treeview">
-              <li class="nav-item ml-3">
-                <router-link to="{!! ('/subjects') !!}" class="nav-link">
-                  <p>
-                  <i class="fas fa-users"></i>
-                    All Subjects
-                  </p>
-                </router-link>
-              </li>
-             
-            </ul>
-          </li>
-
-          <!-- Profile -->
-          <li class="nav-item">
-            <router-link to="/profile" class="nav-link">
-              <i class="fas fa-user nav-icon"></i>
-              <p>Profile</p>
-            </router-link>
-          </li>
-
-          <!-- Developer -->
-          <li class="nav-item">
-            <router-link to="/developer" class="nav-link">
-              <i class="fas fa-cog nav-icon"></i>
-              <p>Developer</p>
-            </router-link>
-          </li>
-
+          </li> 
           <!-- logout processing -->
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"

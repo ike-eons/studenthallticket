@@ -22,9 +22,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResources([
     'user'=>'API\UserController',
     'subject'=>'API\SubjectController',
-    'student'=>'API\StudentController'
+    'student'=>'API\StudentController',
+    'department'=>'API\DepartmentController'
     ]);
     
 Route::get('findUser','API\UserController@search');
 Route::get('findSubject','API\SubjectController@search');
 Route::get('findStudent','API\StudentController@search');
+Route::get('findDepartment','API\DepartmentController@search');
