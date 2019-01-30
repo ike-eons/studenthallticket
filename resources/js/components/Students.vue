@@ -34,8 +34,9 @@
                   <tr v-for="student in students" :key="student.id">
                     <td>{{ student.id }}</td>
                     <td><a href="#" class="nav-link">{{ student.index_no | uppercase }}</a></td>
-                    <td>{{ student.firstname+' '+student.middlename+' '+student.lastname | capitalize }}</td>
-                    <td>{{student.department | capitalize}}</td>
+                    <!-- <td>{{ student.firstname|uppercase}} {{student.middlename||" "|uppercase}} {{student.lastname|uppercase}}</td> -->
+                    <td>{{getFullName(student) | capitalize}}</td>
+                    <td>{{student.department}}</td>
                     <td>{{ student.course | capitalize}}</td>
                     <td>{{ student.regular_or_weekend | capitalize }}</td>
                     <td>{{ student.nationality | capitalize}}</td>
@@ -64,7 +65,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="addNewStudent" tabindex="-1" role="dialog" aria-labelledby="addNewStudentLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 v-show="!editmode" class="modal-title" id="addNewStudentLabel">Add New Student</h5>
@@ -179,9 +180,9 @@
             <!-- ./footer -->
             </form>
         </div> <!-- ./modal content -->
-    </div> <!-- ./modal dialog -->
-    </div> <!-- ./end of modal  -->
-    </div>
+        </div> <!-- ./modal dialog -->
+        </div> <!-- ./end of modal  -->
+        </div>
     <!-- /.container -->
 </template>
 
@@ -196,7 +197,7 @@
             return {
                 editmode : true, // for edit conditional
                 students: {}, //student object
-                name: '',
+
                 // Create a new form instance
                 form: new Form({
                         id: '',
@@ -226,6 +227,7 @@
                 createStudent(){
                     this.$Progress.start();
                     this.form.post('api/student')
+
                     .then( () => {
                         Fire.$emit('reload');
 
@@ -268,7 +270,7 @@
                         });
                 },
                 deleteStudent(id){
-                swal({
+                    swal({
                         title: 'Are you sure?',
                         text: "You won't be able to revert this!",
                         type: 'warning',
@@ -302,7 +304,10 @@
                                 
                             }
                     })
-            }
+                },
+                getFullName(student){
+                    return student.firstname + " " + (this.form.middlename||'') + "  " + student.lastname;
+                }
         },
         created(){
             this.loadStudents();

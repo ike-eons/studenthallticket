@@ -72710,6 +72710,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -72719,7 +72720,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             editmode: true, // for edit conditional
             students: {}, //student object
-            name: '',
+
             // Create a new form instance
             form: new __WEBPACK_IMPORTED_MODULE_0_vform__["Form"]({
                 id: '',
@@ -72813,6 +72814,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     });
                 }
             });
+        },
+        getFullName: function getFullName(student) {
+            return student.firstname + " " + (this.form.middlename || '') + "  " + student.lastname;
         }
     },
     created: function created() {
@@ -72892,21 +72896,11 @@ var render = function() {
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(
-                          _vm._s(
-                            _vm._f("capitalize")(
-                              student.firstname +
-                                " " +
-                                student.middlename +
-                                " " +
-                                student.lastname
-                            )
-                          )
+                          _vm._s(_vm._f("capitalize")(_vm.getFullName(student)))
                         )
                       ]),
                       _vm._v(" "),
-                      _c("td", [
-                        _vm._v(_vm._s(_vm._f("capitalize")(student.department)))
-                      ]),
+                      _c("td", [_vm._v(_vm._s(student.department))]),
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(_vm._s(_vm._f("capitalize")(student.course)))
