@@ -21,15 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
 //refreshing the any selected page
 Route::get('{path}', "HomeController@index")->where( 'path','([A-z\d-\/_.]+)?');

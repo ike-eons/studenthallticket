@@ -42628,7 +42628,7 @@ module.exports = Vue;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(142);
-module.exports = __webpack_require__(192);
+module.exports = __webpack_require__(195);
 
 
 /***/ }),
@@ -42721,7 +42721,7 @@ __WEBPACK_IMPORTED_MODULE_3_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_4_vue_
 // either be an actual component constructor created via
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
-var routes = [{ path: '/dashboard', component: __webpack_require__(171) }, { path: '/profile', component: __webpack_require__(174) }, { path: '/users', component: __webpack_require__(177) }, { path: '/subjects', component: __webpack_require__(180) }, { path: '/students', component: __webpack_require__(183) }, { path: '/departments', component: __webpack_require__(186) }];
+var routes = [{ path: '/dashboard', component: __webpack_require__(171) }, { path: '/profile', component: __webpack_require__(174) }, { path: '/users', component: __webpack_require__(177) }, { path: '/subjects', component: __webpack_require__(180) }, { path: '/students', component: __webpack_require__(183) }, { path: '/departments', component: __webpack_require__(186) }, { path: '/student', component: __webpack_require__(189) }];
 
 //3. Routes Registration
 //Create the router instance and pass the `routes` option
@@ -42740,7 +42740,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_4_vue_router__["a" /* default */]({
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-__WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('example-component', __webpack_require__(189));
+__WEBPACK_IMPORTED_MODULE_3_vue___default.a.component('example-component', __webpack_require__(192));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -70771,6 +70771,70 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -70793,18 +70857,72 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Dashboard Component")
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-lg-3 col-6" }, [
+          _c("div", { staticClass: "small-box bg-success" }, [
+            _c("div", { staticClass: "inner" }, [
+              _c("h3", [_vm._v("44")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Student Registrations")])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+            _c("div", { staticClass: "icon" }),
+            _vm._v(" "),
+            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
+              _vm._v("\n                      More info "),
+              _c("i", { staticClass: "fa fa-arrow-circle-right" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-6" }, [
+          _c("div", { staticClass: "small-box bg-warning" }, [
+            _c("div", { staticClass: "inner" }, [
+              _c("h3", [_vm._v("12")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Printed Hall-Tickets")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "icon" }),
+            _vm._v(" "),
+            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
+              _vm._v("\n                      More info "),
+              _c("i", { staticClass: "fa fa-arrow-circle-right" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-6" }, [
+          _c("div", { staticClass: "small-box bg-info" }, [
+            _c("div", { staticClass: "inner" }, [
+              _c("h3", [_vm._v("23")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Borrowed Books")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "icon" }),
+            _vm._v(" "),
+            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
+              _vm._v("\n                      More info "),
+              _c("i", { staticClass: "fa fa-arrow-circle-right" })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-lg-3 col-6" }, [
+          _c("div", { staticClass: "small-box bg-danger" }, [
+            _c("div", { staticClass: "inner" }, [
+              _c("h3", [_vm._v("44")]),
+              _vm._v(" "),
+              _c("p", [_vm._v("Students Who Owe Fees")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "icon" }),
+            _vm._v(" "),
+            _c("a", { staticClass: "small-box-footer", attrs: { href: "#" } }, [
+              _vm._v("\n                      More info "),
+              _c("i", { staticClass: "fa fa-arrow-circle-right" })
             ])
           ])
         ])
@@ -70890,6 +71008,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -70912,18 +71062,104 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Profile Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", { staticClass: "card card-success card-outline" }, [
+            _c("div", { staticClass: "card-body box-profile" }, [
+              _c("div", { staticClass: "row text-center" }, [
+                _c(
+                  "h3",
+                  {
+                    staticClass: "px-4 font-weight-bold text-info text-center"
+                  },
+                  [_vm._v("STUDENT'S PROFILE")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("table", { staticClass: "table table-responsive" }, [
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: " text-right font-weight-bold text-muted"
+                        },
+                        [_vm._v("INDEX NO. : ")]
+                      ),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "pl-2" }, [_vm._v("ANU16280180")])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: " text-right font-weight-bold text-muted"
+                        },
+                        [_vm._v("NAME : ")]
+                      ),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "pl-2" }, [
+                        _vm._v("FRIMPONG KWAME BAAH")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: " text-right font-weight-bold text-muted"
+                        },
+                        [_vm._v("DEPARTMENT : ")]
+                      ),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "pl-2" }, [
+                        _vm._v("COMPUTER SCIENCE & ENGINEERING")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: " text-right font-weight-bold text-muted"
+                        },
+                        [_vm._v("COURSE : ")]
+                      ),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "pl-2" }, [
+                        _vm._v("BSC. COMPUTER ENGINEERING")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: " text-right font-weight-bold text-muted"
+                        },
+                        [_vm._v("SESSION : ")]
+                      ),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "pl-2" }, [_vm._v("WEEKEND")])
+                    ]),
+                    _vm._v(" "),
+                    _c("tr", [
+                      _c(
+                        "td",
+                        {
+                          staticClass: " text-right font-weight-bold text-muted"
+                        },
+                        [_vm._v("NATIONALITY : ")]
+                      ),
+                      _vm._v(" "),
+                      _c("td", { staticClass: "pl-2" }, [_vm._v("GHANAIAN")])
+                    ])
+                  ])
+                ])
+              ])
             ])
           ])
         ])
@@ -72710,7 +72946,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -72816,7 +73051,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
         },
         getFullName: function getFullName(student) {
-            return student.firstname + " " + (this.form.middlename || '') + "  " + student.lastname;
+            return student.firstname + " " + (student.middlename || '') + "  " + student.lastname;
         }
     },
     created: function created() {
@@ -72880,19 +73115,29 @@ var render = function() {
                   _vm._v(" "),
                   _vm._l(_vm.students, function(student) {
                     return _c("tr", { key: student.id }, [
-                      _c("td", [_vm._v(_vm._s(student.id))]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _c(
-                          "a",
-                          { staticClass: "nav-link", attrs: { href: "#" } },
-                          [
-                            _vm._v(
-                              _vm._s(_vm._f("uppercase")(student.index_no))
-                            )
-                          ]
-                        )
-                      ]),
+                      _c(
+                        "td",
+                        [
+                          _c(
+                            "router-link",
+                            {
+                              staticClass:
+                                "nav-link text-info font-weight-bold",
+                              attrs: { to: "/profile" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(
+                                    _vm._f("uppercase")(student.index_no)
+                                  ) +
+                                  "\n                    "
+                              )
+                            ]
+                          )
+                        ],
+                        1
+                      ),
                       _vm._v(" "),
                       _c("td", [
                         _vm._v(
@@ -72903,25 +73148,11 @@ var render = function() {
                       _c("td", [_vm._v(_vm._s(student.department))]),
                       _vm._v(" "),
                       _c("td", [
-                        _vm._v(_vm._s(_vm._f("capitalize")(student.course)))
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
                         _vm._v(
                           _vm._s(
                             _vm._f("capitalize")(student.regular_or_weekend)
                           )
                         )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(
-                          _vm._s(_vm._f("capitalize")(student.nationality))
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [
-                        _vm._v(_vm._s(_vm._f("datetime")(student.created_at)))
                       ]),
                       _vm._v(" "),
                       _c("td", [
@@ -73618,21 +73849,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("tr", [
-      _c("th", [_vm._v("ID")]),
-      _vm._v(" "),
       _c("th", [_vm._v("Index_no")]),
       _vm._v(" "),
       _c("th", [_vm._v("Name")]),
       _vm._v(" "),
       _c("th", [_vm._v("Department")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Course")]),
-      _vm._v(" "),
       _c("th", [_vm._v("Session Type")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Nationality")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Created_at")]),
       _vm._v(" "),
       _c("th", [_vm._v("Action")])
     ])
@@ -74352,7 +74575,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/ExampleComponent.vue"
+Component.options.__file = "resources/js/components/StudentProfile.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -74361,9 +74584,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-299e239e", Component.options)
+    hotAPI.createRecord("data-v-946209ce", Component.options)
   } else {
-    hotAPI.reload("data-v-299e239e", Component.options)
+    hotAPI.reload("data-v-946209ce", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -74392,6 +74615,112 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        console.log('Component mounted.');
+    }
+});
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container-fluid" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-6" }, [
+          _c("div", { staticClass: "card card-primary card-outline" })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-946209ce", module.exports)
+  }
+}
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(193)
+/* template */
+var __vue_template__ = __webpack_require__(194)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ExampleComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-299e239e", Component.options)
+  } else {
+    hotAPI.reload("data-v-299e239e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -74403,7 +74732,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 191 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -74446,7 +74775,7 @@ if (false) {
 }
 
 /***/ }),
-/* 192 */
+/* 195 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

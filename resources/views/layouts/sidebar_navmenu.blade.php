@@ -19,7 +19,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item ml-3">
                 <router-link to="/students" class="nav-link">
-                  <p>All Subjects</p>
+                  <p>All Students</p>
                 </router-link>
               </li>
             </ul>
@@ -97,6 +97,14 @@
               </li>
             </ul>
           </li>
+          
+          <!-- Profile -->
+          <li class="nav-item">
+            <router-link to="/profile" class="nav-link">
+              <i class="fas fa-user nav-icon"></i>
+              <p>Profile</p>
+            </router-link>
+          </li>
 
           <!-- QA -->
           <li class="nav-item has-treeview">
@@ -120,7 +128,7 @@
 
          <!-- Management Treeview -->
           <li class="nav-item has-treeview menu-open">
-            <router-link to="{!! ('#') !!}" class="nav-link">
+            <router-link to="/dashboard" class="nav-link">
             <i class="fa fa-th nav-icon text-orange"></i>
               <p>
                 Management

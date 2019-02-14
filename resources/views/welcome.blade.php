@@ -85,8 +85,8 @@
                 </div>
 
                 <div class="links">
-                    <a href="#">Check Clearance Status</a>
-                    <a href="#">Print Hall Ticket</a>
+                    <a href="#">CHECK CLEARANCE STATUS</a>
+                    <a href="#">PRINT HALL TICKET</a>
                     
                 </div>
             </div>

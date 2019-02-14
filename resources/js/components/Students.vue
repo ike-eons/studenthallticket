@@ -17,14 +17,10 @@
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover">
                   <tbody><tr>
-                    <th>ID</th>
                     <th>Index_no</th>
                     <th>Name</th>
                     <th>Department</th>
-                    <th>Course</th>
                     <th>Session Type</th>
-                    <th>Nationality</th>
-                    <th>Created_at</th>
                     <th>Action</th>
                   </tr>
                  <!-- 
@@ -32,15 +28,18 @@
                     *  display all students
                   -->
                   <tr v-for="student in students" :key="student.id">
-                    <td>{{ student.id }}</td>
-                    <td><a href="#" class="nav-link">{{ student.index_no | uppercase }}</a></td>
+                    <td>
+                        <!-- <a href="{!! route('students.show') !!}" class="nav-link text-info font-weight-bold">
+                            {{ student.index_no | uppercase }}
+                        </a> -->
+                        <router-link to="/profile" class="nav-link text-info font-weight-bold">
+                            {{ student.index_no | uppercase }}
+                        </router-link>
+                    </td>
                     <!-- <td>{{ student.firstname|uppercase}} {{student.middlename||" "|uppercase}} {{student.lastname|uppercase}}</td> -->
                     <td>{{getFullName(student) | capitalize}}</td>
                     <td>{{student.department}}</td>
-                    <td>{{ student.course | capitalize}}</td>
                     <td>{{ student.regular_or_weekend | capitalize }}</td>
-                    <td>{{ student.nationality | capitalize}}</td>
-                    <td>{{ student.created_at |datetime }}</td>
                     <td>
                         <!-- Edit Student -->
                         <a href="#" @click="editModal(student)">
@@ -306,7 +305,7 @@
                     })
                 },
                 getFullName(student){
-                    return student.firstname + " " + (this.form.middlename||'') + "  " + student.lastname;
+                    return student.firstname + " " + (student.middlename||'') + "  " + student.lastname;
                 }
         },
         created(){

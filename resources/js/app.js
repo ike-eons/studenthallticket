@@ -81,7 +81,8 @@ let routes = [
     { path: '/users', component: require('./components/Users.vue') },
     { path: '/subjects', component: require('./components/Subjects.vue') },
     { path: '/students', component: require('./components/Students.vue') },
-    { path: '/departments', component: require('./components/Departments.vue') }
+    { path: '/departments', component: require('./components/Departments.vue') },
+    { path: '/student', component: require('./components/StudentProfile.vue') }
   ]
 
 //3. Routes Registration
