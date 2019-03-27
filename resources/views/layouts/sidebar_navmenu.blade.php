@@ -24,6 +24,7 @@
               </li>
             </ul>
           </li>
+
           <!-- Subject -------------------->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -128,7 +129,7 @@
 
          <!-- Management Treeview -->
           <li class="nav-item has-treeview menu-open">
-            <router-link to="/dashboard" class="nav-link">
+            <router-link to="#" class="nav-link">
             <i class="fa fa-th nav-icon text-orange"></i>
               <p>
                 Management
@@ -147,6 +148,7 @@
              
             </ul>
           </li> 
+
           <!-- logout processing -->
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
@@ -162,4 +164,4 @@
                   @csrf
               </form>
           </li>
-        </ul>
+</ul>

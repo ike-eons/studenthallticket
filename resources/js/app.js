@@ -77,12 +77,11 @@ Vue.use(VueRouter)
     // We'll talk about nested routes later.
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue') },
-    { path: '/profile', component: require('./components/Profile.vue') },
+    { path: '/profile/:id', component: require('./components/Profile.vue') },
     { path: '/users', component: require('./components/Users.vue') },
     { path: '/subjects', component: require('./components/Subjects.vue') },
     { path: '/students', component: require('./components/Students.vue') },
-    { path: '/departments', component: require('./components/Departments.vue') },
-    { path: '/student', component: require('./components/StudentProfile.vue') }
+    { path: '/departments', component: require('./components/Departments.vue') }
   ]
 
 //3. Routes Registration
@@ -103,6 +102,7 @@ const router = new VueRouter({
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('vue-students', require('./components/Students.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))

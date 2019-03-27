@@ -29,12 +29,12 @@
                   -->
                   <tr v-for="student in students" :key="student.id">
                     <td>
-                        <!-- <a href="{!! route('students.show') !!}" class="nav-link text-info font-weight-bold">
+                        <a :href="'/profile/'+student.id" class="nav-link text-info font-weight-bold">
                             {{ student.index_no | uppercase }}
-                        </a> -->
-                        <router-link to="/profile" class="nav-link text-info font-weight-bold">
+                        </a> 
+                        <!-- <router-link to="/profile" class="nav-link text-info font-weight-bold">
                             {{ student.index_no | uppercase }}
-                        </router-link>
+                        </router-link> -->
                     </td>
                     <!-- <td>{{ student.firstname|uppercase}} {{student.middlename||" "|uppercase}} {{student.lastname|uppercase}}</td> -->
                     <td>{{getFullName(student) | capitalize}}</td>
